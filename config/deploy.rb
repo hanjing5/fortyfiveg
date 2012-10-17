@@ -1,15 +1,19 @@
-set :application, "set your application name here"
 
 
+set :application, "fortyfiveg"
+set :deploy_to, "/fortyfiveg"
 set :user, "bitnami"
+set :scm, "git"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :repository, "git@github.com:unparallellogical/fortyfiveg.git"
-set :domain, "ubuntu@ec2-50-17-24-103.compute-1.amazonaws.com"
-set :application, "fortyfiveg"
-set :deploy_via, :export
+set :domain, "ec2-50-17-24-103.compute-1.amazonaws.com"
+set :deploy_via, :copy
 
-role :web, "domain"                          # Your HTTP server, Apache/etc
-role :app, "domain"                          # This may be the same as your `Web` server
+
+# deploy config
+#set :deploy_via, :export
+role :web, domain                          # Your HTTP server, Apache/etc
+role :app, domain                          # This may be the same as your `Web` serve
 role :db,  domain, :primary => true
 
 # if you want to clean up old releases on each deploy uncomment this:
@@ -28,10 +32,6 @@ role :db,  domain, :primary => true
 # end
 #
 
-# deploy config
-set :deploy_to, "fortyfiveg"
-#set :deploy_via, :export
-set :copy_strategy, :export
 
 # additional settings
 default_run_options[:pty] = true  # Forgo errors when deploying from windows
