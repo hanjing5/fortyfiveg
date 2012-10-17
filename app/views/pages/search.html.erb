@@ -1,0 +1,14 @@
+<style>
+  .search-form{
+    width: 700px;
+  }
+  input[type="submit"]::-moz-focus-inner {border:0;}
+</style>
+<%= form_tag("/search", :method => "get") do %>
+  <%= text_field_tag(:query, nil, :class=>"search-form", :style=>"height:2.2em;vertical-align:top") %>
+    <%= submit_tag("Search", :class=>"btn btn-primary btn-large") %>
+<% end %>
+
+<% @results.each do |r| %>
+  <%= render "shared/box", :r => r %>
+<% end %>

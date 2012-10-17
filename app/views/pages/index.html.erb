@@ -1,0 +1,15 @@
+<style>
+  .search-form{
+    width: 700px;
+  }
+  input[type="submit"]::-moz-focus-inner {border:0;}
+</style>
+<div class="hero-unit">
+  <h1>Hello! </h1>
+  <h1>Welcome to Internal Search.</h1>
+  <br>
+<%= form_tag("/search", :method => "get") do %>
+  <%= text_field_tag(:query, nil, :class=>"search-form", :style=>"height:2.2em;vertical-align:top") %>
+    <%= submit_tag("Search", :class=>"btn btn-primary btn-large") %>
+<% end %>
+</div>

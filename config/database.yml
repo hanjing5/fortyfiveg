@@ -1,0 +1,33 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: mysql2
+  database: ffg_dev
+  username:
+  password:
+  port: 3306
+
+test:
+  adapter: mysql2
+  database: ffg_test
+  username:
+  password:
+  port: 3306
+
+production:
+  adapter: mysql2
+  database: ffg_pro
+  username:
+  password:
+  port: 3306
+
+politify:
+  adapter: mysql2
+  host: politify.cbmxmsm0hsa2.us-west-1.rds.amazonaws.com
+  database: politify
+  username: politify
+  password: sanfran2010
+  port: 3306
