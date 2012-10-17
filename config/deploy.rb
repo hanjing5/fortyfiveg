@@ -1,13 +1,15 @@
 
 
 set :application, "fortyfiveg"
-set :deploy_to, "/fortyfiveg"
+set :deploy_to, "/home/bitnami/fortyfiveg"
 set :user, "bitnami"
 set :scm, "git"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :repository, "git@github.com:unparallellogical/fortyfiveg.git"
 set :domain, "ec2-50-17-24-103.compute-1.amazonaws.com"
 set :deploy_via, :copy
+
+set :use_sudo, true
 
 
 # deploy config
